@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const ProductCards = ({item}) => {
   return (
     <div className='CardWrapper'>
@@ -12,21 +12,26 @@ const ProductCards = ({item}) => {
             <img className='img' src={item.thumbnail} alt="" />
         </div>
         <div className='InfoWrapper'>
-           <div>
-           <div>
+           <div className="Product_container">
+           <div className='brand'>
                 {item.brand}
             </div>
             
-            <div>
+            <div className='cat'>
                 {item.category}
             </div>
            
             <div>
-                <div></div>
-                <div></div>
+                
+                <div className='Price'>$ {item.price}</div>
             </div>
-           </div>
+            <div>
+            <Link to={`/disc/${item.id}`}><div><i className="fa-solid fa-arrow-right"></i></div></Link>
         </div>
+           </div>
+           
+        </div>
+        
     </div>
   )
 }
